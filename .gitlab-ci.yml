@@ -1,0 +1,15 @@
+testpy2:
+  image: docker.tc.bbn.com/ta3-base-image
+  script: |
+    pip install --process-dependency-links . || exit 1
+    python setup.py test || exit 1
+  tags:
+  - docker
+
+testpy3:
+  image: docker.tc.bbn.com/ta3-base-image
+  script: |
+    pip3 install --process-dependency-links . || exit 1
+    python3 setup.py test || exit 1
+  tags:
+  - docker
